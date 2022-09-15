@@ -25,13 +25,13 @@ struct RecipeDetailView: View {
                 Text(recipe.name)
                     .padding(.top, 40)
                     .padding(.leading)
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir Heavy", size: 24))
                     .bold()
                 
                 // MARK: Picker
                 VStack (alignment: .leading) {
                     Text("Select your serving size:")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                     
                     Picker("", selection: $selectedServingSize) {
                         Text("2").tag(2)
@@ -50,10 +50,11 @@ struct RecipeDetailView: View {
                 // MARK: Ingredients
                 VStack(alignment: .leading) {
                     Text("Ingredients")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding(.bottom, 5)
                     ForEach (recipe.ingredients) { i in
                         Text(" • " + RecipeModel.getPortion(ingredient: i, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + i.name.lowercased())
+                            .font(Font.custom("Avenir", size: 15))
                     }
                 }
                 .padding(.all)
@@ -64,13 +65,14 @@ struct RecipeDetailView: View {
                 // MARK: Directions
                 VStack(alignment: .leading) {
                     Text("Directions")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding(.vertical)
                     
                     
                     ForEach(0..<recipe.directions.count, id: \.self) { index in
                         Text(String(index + 1) + ". " + recipe.directions[index])
                             .padding(.bottom, 5)
+                            .font(Font.custom("Avenir", size: 15))
                         
                     }
                 }
