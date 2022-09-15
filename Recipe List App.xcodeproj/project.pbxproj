@@ -19,6 +19,7 @@
 		2D7586EF28D220BD003270B1 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7586EE28D220BD003270B1 /* Ingredient.swift */; };
 		2D7586F128D27E67003270B1 /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7586F028D27E67003270B1 /* RecipeFeaturedView.swift */; };
 		2D9F83E228D1651B0098B119 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F83E128D1651B0098B119 /* RecipeDetailView.swift */; };
+		2DBA1D2C28D2BF6000072BE9 /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA1D2B28D2BF6000072BE9 /* Rational.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2D7586EE28D220BD003270B1 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		2D7586F028D27E67003270B1 /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
 		2D9F83E128D1651B0098B119 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		2DBA1D2B28D2BF6000072BE9 /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		2D0495AE28D14D580075F863 /* Recipe List App */ = {
 			isa = PBXGroup;
 			children = (
+				2DBA1D2A28D2BF5200072BE9 /* Utilities */,
 				2D0495AF28D14D580075F863 /* Recipe_List_App.swift */,
 				2D0495BD28D14D930075F863 /* Views */,
 				2D0495BE28D14D9B0075F863 /* ViewModels */,
@@ -129,6 +132,14 @@
 				2D0495C828D156560075F863 /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2DBA1D2A28D2BF5200072BE9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2DBA1D2B28D2BF6000072BE9 /* Rational.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				2D0495B228D14D580075F863 /* RecipeListView.swift in Sources */,
 				2D7586F128D27E67003270B1 /* RecipeFeaturedView.swift in Sources */,
 				2D0495B028D14D580075F863 /* Recipe_List_App.swift in Sources */,
+				2DBA1D2C28D2BF6000072BE9 /* Rational.swift in Sources */,
 				2D0495C928D156560075F863 /* DataService.swift in Sources */,
 				2D7586B728D21019003270B1 /* RecipeTabView.swift in Sources */,
 			);

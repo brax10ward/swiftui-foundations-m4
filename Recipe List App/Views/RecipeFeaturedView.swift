@@ -49,12 +49,17 @@ struct RecipeFeaturedView: View {
             }
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("Preparation Time: ")
-                    .font(.headline)
-                Text("1 hour")
-                Text("Highlights")
-                    .font(.headline)
-                Text("Healthy, Hearty")
+                HStack {
+                    Text("Preparation Time: ")
+                        .font(.headline)
+                    Text("10 minutes")
+                }
+                HStack {
+                    Text("Highlights: ")
+                        .font(.headline)
+                    Text("Healthy, Hearty")
+                }
+               
             }
             .padding([.bottom, .leading])
 

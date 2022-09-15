@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeDetailView: View {
     
     var recipe:Recipe
+    @State private var selectedServingSize = 2
     
     var body: some View {
         ScrollView {
@@ -20,16 +21,35 @@ struct RecipeDetailView: View {
                     .scaledToFill()
                     .cornerRadius(5)
                 
+                // MARK: Picker
+                VStack (alignment: .leading) {
+                    Text("Select your service size:")
+                        .font(.headline)
+                    
+                    Picker("", selection: $selectedServingSize) {
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 200)
+                }
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                
+                
+                Divider()
+                
                 // MARK: Ingredients
                 VStack(alignment: .leading) {
                     Text("Ingredients")
                         .font(.headline)
                         .padding(.bottom, 5)
                     ForEach (recipe.ingredients) { i in
-                        Text(" • " + i.name)
+                        Text(" • " + RecipeModel.getPortion(ingredient: i, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + i.name.lowercased())
                     }
                 }
-                .padding(.horizontal)
+                .padding(.all)
                 
                 // MARK: Divider
                 Divider()
@@ -39,7 +59,7 @@ struct RecipeDetailView: View {
                     Text("Directions")
                         .font(.headline)
                         .padding(.vertical)
-                        
+                    
                     
                     ForEach(0..<recipe.directions.count, id: \.self) { index in
                         Text(String(index + 1) + ". " + recipe.directions[index])
@@ -52,6 +72,7 @@ struct RecipeDetailView: View {
             
         }
         .navigationBarTitle(recipe.name)
+        
     }
 }
 
